@@ -9,7 +9,11 @@ function App() {
   return (
     <>
       <div>CV builder</div>
-      <CvForm className="cvFormCSS" />
+      <div className='container'>
+        <CvForm className="cvFormCSS" />
+        <div>hey</div>
+      </div>
+      
       
     </>
   )
