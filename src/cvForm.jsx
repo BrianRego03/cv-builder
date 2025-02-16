@@ -8,6 +8,7 @@ function CvForm(){
     return(
         <>
             <form action={"#"} method="POST">
+                <button type="button">Personal Details</button>
                 <fieldset>
                     <legend>Personal Information</legend>
                     <div><label htmlFor="name">Name:</label></div>
@@ -43,11 +44,13 @@ function CvForm(){
                 <div><label htmlFor="company">Company:</label></div>
                 <div><input type="text" id="company"></input></div>
                 <div><label htmlFor="jstartDate">Start Date:</label></div>
-                <div><input type="date" id="startDate"></input></div>
+                <div><input type="month" id="startDate"></input></div>
                 <div><label htmlFor="endDate">End Date:</label></div>
-                <div><input type="date" id="endDate"></input></div>
-                <div><label htmlFor="cgpa">CGPA:</label></div>
-                <div><input type="text" id="cgpa"></input></div>
+                <div><input type="month" id="endDate"></input></div>
+                <div><label htmlFor="jobDetails">Job Details:</label></div>
+                <div><input type="text" id="jobDetails"></input></div>
+                <div><label htmlFor="jobLocation">Job Location:</label></div>
+                <div><input type="text" id="jobLocation"></input></div>
 
                 </fieldset>
                 <button type="submit">Save & Submit</button>
