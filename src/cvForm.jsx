@@ -52,7 +52,11 @@ function CvForm(){
         const expComponentsNumber=experienceEntries.length;
         console.log(eduComponentsNumber);
         console.log(expComponentsNumber);
-        personalObject
+        const person=fetchPersonal();
+        const personal = new personalObject()
+    }
+    function fetchPersonal(){
+        
     }
 
 
