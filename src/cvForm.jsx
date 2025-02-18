@@ -1,6 +1,7 @@
 // import { useState } from "react";
 
 import AddEducation from "./components/Education.jsx";
+import AddExperience from "./components/Experience.jsx";
 
 function CvForm(){
 
@@ -16,17 +17,17 @@ function CvForm(){
         
     }
 
-    function toggleExperience(identity){
-        const experienceSection=document.getElementById(identity);
-        if(experienceSection.style.display=="none"){
-            experienceSection.style.display="block"
+    // function toggleExperience(identity){
+    //     const experienceSection=document.getElementById(identity);
+    //     if(experienceSection.style.display=="none"){
+    //         experienceSection.style.display="block"
 
-        }
-        else{
-            experienceSection.style.display="none"
-        }
+    //     }
+    //     else{
+    //         experienceSection.style.display="none"
+    //     }
 
-    }
+    // }
 
 
 
@@ -69,7 +70,7 @@ function CvForm(){
 
                 </fieldset> */}
                 <AddEducation />
-                <div>
+                {/* <div>
                     <button type="button" 
                     onClick={()=>{toggleExperience("experienceSection")}}>Experience</button>
 
@@ -89,7 +90,8 @@ function CvForm(){
                 <div><label htmlFor="jobLocation">Job Location:</label></div>
                 <div><input type="text" id="jobLocation"></input></div>
 
-                </fieldset>
+                </fieldset> */}
+                <AddExperience />
                 <button type="submit">Save & Submit</button>
             </form>
         </>
