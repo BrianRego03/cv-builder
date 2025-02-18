@@ -32,13 +32,21 @@ function CvForm(){
 
     }
 
+    function handleSubmit(event){
+        event.preventDefault();
+        const eduComponentsNumber=educationEntries.length;
+        const expComponentsNumber=experienceEntries.length;
+        console.log(eduComponentsNumber);
+        console.log(expComponentsNumber);
+    }
+
 
 
 
 
     return(
         <>
-            <form action={"#"} method="POST">
+            <form id="myForm" onSubmit={handleSubmit}>
                 <div>
                     <button type="button" onClick={showPersonalDetails}>Personal Details</button>
                 </div>
