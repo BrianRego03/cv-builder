@@ -1,6 +1,6 @@
 // import { useState } from "react";
 
-import AddEducation from "./Education.jsx";
+import AddEducation from "./components/Education.jsx";
 
 function CvForm(){
 

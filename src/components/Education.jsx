@@ -1,14 +1,13 @@
-function AddEducation(){
-    function toggleEducation(){
-        const educationDetails=document.getElementById("educationSection");
-        if(educationDetails.style.display=="none"){
-            educationDetails.style.display="block"
+import '../styles/education.css'
+import React, { useState } from 'react';
 
-        }
-        else{
-            educationDetails.style.display="none"
-        }
 
+function AddEducation() {
+    const [isEducationVisible, setIsEducationVisible] = useState(false);
+  
+    function toggleEducation() {
+
+      setIsEducationVisible((prevState) => !prevState);
     }
 
     return(
@@ -17,7 +16,7 @@ function AddEducation(){
         <button type="button" onClick={toggleEducation}>Education</button>
 
     </div>
-
+    {isEducationVisible && (
     <fieldset id="educationSection">
         <legend>Education</legend>
         <div><label htmlFor="college">College name:</label></div>
@@ -31,7 +30,7 @@ function AddEducation(){
         <div><label htmlFor="cgpa">CGPA:</label></div>
         <div><input type="text" id="cgpa"></input></div>
 
-    </fieldset></> 
+    </fieldset>)}</> 
     )
 }
 
