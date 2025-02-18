@@ -5,6 +5,7 @@ import AddExperience from "./components/Experience.jsx";
 
 function CvForm(){
     const [educationEntries, setEducationEntries]=useState([]);
+    const [experienceEntries, setExperienceEntries]=useState([]);
     function showPersonalDetails(){
         const personalDetails=document.getElementById("personalDetailsSection");
         if(personalDetails.style.display=="none"){
@@ -18,7 +19,13 @@ function CvForm(){
     }
 
     function addEducationSection(){
-        setEducationEntries([...educationEntries,<AddEducation key={educationEntries.length} />])
+        setEducationEntries([...educationEntries,<AddEducation key={educationEntries.length} identifier={educationEntries.length} />])
+      
+
+    }
+
+    function addExperienceSection(){
+        setExperienceEntries([...experienceEntries,<AddExperience key={experienceEntries.length} />])
       
 
     }
@@ -53,7 +60,11 @@ function CvForm(){
                 <AddEducation /> */}
                 <div>{educationEntries}</div>
 
-                <AddExperience />
+                <button type ="button" onClick={addExperienceSection} 
+                id="experiencenSection">Add an experience Section + </button>
+                <div>{experienceEntries}</div>
+
+                {/* <AddExperience /> */}
                 <button type="submit">Save & Submit</button>
             </form>
         </>
