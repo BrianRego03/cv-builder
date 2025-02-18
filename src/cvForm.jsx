@@ -6,6 +6,20 @@ import AddExperience from "./components/Experience.jsx";
 function CvForm(){
     const [educationEntries, setEducationEntries]=useState([]);
     const [experienceEntries, setExperienceEntries]=useState([]);
+   
+    class personalObject
+    { 
+        constructor (name,email,mobile,github){
+        this.name=name;
+        this.email=email;
+        this.mobile=mobile;
+        this.github=github;
+    };
+    }
+
+
+
+
     function showPersonalDetails(){
         const personalDetails=document.getElementById("personalDetailsSection");
         if(personalDetails.style.display=="none"){
@@ -38,6 +52,7 @@ function CvForm(){
         const expComponentsNumber=experienceEntries.length;
         console.log(eduComponentsNumber);
         console.log(expComponentsNumber);
+        personalObject
     }
 
 
