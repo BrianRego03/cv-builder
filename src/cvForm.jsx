@@ -1,6 +1,6 @@
 // import { useState } from "react";
 
-
+import AddEducation from "./Education.jsx";
 
 function CvForm(){
 
@@ -15,17 +15,7 @@ function CvForm(){
         }
         
     }
-    function toggleEducation(){
-        const educationDetails=document.getElementById("educationSection");
-        if(educationDetails.style.display=="none"){
-            educationDetails.style.display="block"
 
-        }
-        else{
-            educationDetails.style.display="none"
-        }
-
-    }
     function toggleExperience(identity){
         const experienceSection=document.getElementById(identity);
         if(experienceSection.style.display=="none"){
@@ -59,7 +49,7 @@ function CvForm(){
                     
 
                 </fieldset>
-                <div>
+                {/* <div>
                     <button type="button" onClick={toggleEducation}>Education</button>
 
                 </div>
@@ -77,7 +67,8 @@ function CvForm(){
                     <div><label htmlFor="cgpa">CGPA:</label></div>
                     <div><input type="text" id="cgpa"></input></div>
 
-                </fieldset>
+                </fieldset> */}
+                <AddEducation />
                 <div>
                     <button type="button" 
                     onClick={()=>{toggleExperience("experienceSection")}}>Experience</button>
