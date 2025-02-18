@@ -1,10 +1,10 @@
-// import { useState } from "react";
+import { useState } from "react";
 
 import AddEducation from "./components/Education.jsx";
 import AddExperience from "./components/Experience.jsx";
 
 function CvForm(){
-
+    const [educationEntries, setEducationEntries]=useState([]);
     function showPersonalDetails(){
         const personalDetails=document.getElementById("personalDetailsSection");
         if(personalDetails.style.display=="none"){
@@ -15,6 +15,12 @@ function CvForm(){
             personalDetails.style.display="none"
         }
         
+    }
+
+    function addEducationSection(){
+        setEducationEntries([...educationEntries,<AddEducation key={educationEntries.length} />])
+      
+
     }
 
 
@@ -40,8 +46,12 @@ function CvForm(){
                     
 
                 </fieldset>
- 
-                <AddEducation />
+                <button type ="button" onClick={addEducationSection} 
+                id="educationSection">Add an education Section + </button>
+                
+                {/* <AddEducation />
+                <AddEducation /> */}
+                <div>{educationEntries}</div>
 
                 <AddExperience />
                 <button type="submit">Save & Submit</button>
