@@ -19,13 +19,15 @@ function CvForm(){
     }
 
     function addEducationSection(){
-        setEducationEntries([...educationEntries,<AddEducation key={educationEntries.length} identifier={educationEntries.length} />])
+        setEducationEntries([...educationEntries,<AddEducation key={educationEntries.length} 
+            identifier={educationEntries.length} />])
       
-
+        // console.log(educationEntries.length);
     }
 
     function addExperienceSection(){
-        setExperienceEntries([...experienceEntries,<AddExperience key={experienceEntries.length} />])
+        setExperienceEntries([...experienceEntries,<AddExperience key={experienceEntries.length}
+            identifier={experienceEntries.length} />])
       
 
     }

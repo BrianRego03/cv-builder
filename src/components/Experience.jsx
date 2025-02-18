@@ -2,9 +2,9 @@
 import React, { useState } from 'react';
 
 
-function AddExperience() {
+function AddExperience({identifier}) {
     const [isExperienceVisible, setIsExperienceVisible] = useState(false);
-  
+    const index=identifier;
     function toggleExperience() {
 
         setIsExperienceVisible((prevState) => !prevState);
@@ -19,18 +19,18 @@ function AddExperience() {
     {isExperienceVisible && (
     <fieldset id="experienceSection">
     <legend>Experience</legend>
-    <div><label htmlFor="jobTitle">Job Title:</label></div>
-    <div><input type="text" id="jobTitle"></input></div>
-    <div><label htmlFor="company">Company:</label></div>
-    <div><input type="text" id="company"></input></div>
-    <div><label htmlFor="jobStartDate">Start Date:</label></div>
-    <div><input type="month" id="jobStartDate"></input></div>
-    <div><label htmlFor="JobEndDate">End Date:</label></div>
-    <div><input type="month" id="JobEndDate"></input></div>
-    <div><label htmlFor="jobDetails">Job Details:</label></div>
-    <div><input type="text" id="jobDetails"></input></div>
-    <div><label htmlFor="jobLocation">Job Location:</label></div>
-    <div><input type="text" id="jobLocation"></input></div>
+    <div><label htmlFor={`jobTitle${index}`}>Job Title:</label></div>
+    <div><input type="text" id={`jobTitle${index}`}></input></div>
+    <div><label htmlFor={`company${index}`}>Company:</label></div>
+    <div><input type="text" id={`company${index}`}></input></div>
+    <div><label htmlFor={`jobStartDate${index}`}>Start Date:</label></div>
+    <div><input type="month" id={`jobStartDate${index}`}></input></div>
+    <div><label htmlFor={`jobEndDate${index}`}>End Date:</label></div>
+    <div><input type="month" id={`jobEndDate${index}`}></input></div>
+    <div><label htmlFor={`jobDetails${index}`}>Job Details:</label></div>
+    <div><input type="text" id={`jobDetails${index}`}></input></div>
+    <div><label htmlFor={`jobLocation${index}`}>Job Location:</label></div>
+    <div><input type="text" id={`jobLocation${index}`}></input></div>
 
     </fieldset>)}</> 
     )
