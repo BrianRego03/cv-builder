@@ -54,8 +54,10 @@ function CvForm(){
         console.log(expComponentsNumber);
         const person=fetchPersonal();
         const educationalArray=fetchEducation();
+        const experienceArray=fetchExperience();
         console.log(person);
         console.log(educationalArray);
+        console.log(experienceArray);
         const personal = new personalObject();
     }
     function fetchPersonal(){
@@ -68,10 +70,10 @@ function CvForm(){
         }
     }
     function fetchEducation(){
-        const returningArray=[];
+        const returningEduArray=[];
         if(educationEntries.length!=0){
             for(let i=0;i<educationEntries.length;i++){
-                returningArray[i]={
+                returningEduArray[i]={
                     college:document.getElementById(`college${i}`).value,
                     degree:document.getElementById(`degree${i}`).value,
                     startDate:document.getElementById(`startDate${i}`).value,
@@ -82,12 +84,33 @@ function CvForm(){
                 }
             }
 
+            return returningEduArray;
+
+        }
+        else return [];
+    }
+    function fetchExperience(){
+        const returningArray=[];
+        if(experienceEntries.length!=0){
+            for(let i=0;i<experienceEntries.length;i++){
+                returningArray[i]={
+                    jobTitle:document.getElementById(`jobTitle${i}`).value,
+                    company:document.getElementById(`company${i}`).value,
+                    jobStartDate:document.getElementById(`jobStartDate${i}`).value,
+                    jobEndDate:document.getElementById(`jobEndDate${i}`).value,
+                    jobDetails:document.getElementById(`jobDetails${i}`).value,
+                    jobLocation:document.getElementById(`jobLocation${i}`).value,
+
+
+
+                }
+            }
+
             return returningArray;
 
         }
         else return [];
     }
-
 
 
 
