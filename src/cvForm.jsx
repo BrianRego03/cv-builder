@@ -53,10 +53,17 @@ function CvForm(){
         console.log(eduComponentsNumber);
         console.log(expComponentsNumber);
         const person=fetchPersonal();
-        const personal = new personalObject()
+        console.log(person);
+        const personal = new personalObject();
     }
     function fetchPersonal(){
-        
+        return {
+            name:document.getElementById("name").value,
+            email:document.getElementById("email").value,
+            mobile:document.getElementById("mobile").value,
+            github:document.getElementById("github").value
+
+        }
     }
 
 
