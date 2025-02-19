@@ -10,7 +10,7 @@
   min-width: 50%;
 }
 .container{
-  display: flex;
-  justify-content: space-evenly;
+  /* display: flex;
+  justify-content: space-evenly; */
 
 }
