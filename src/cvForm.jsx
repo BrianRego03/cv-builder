@@ -53,7 +53,9 @@ function CvForm(){
         console.log(eduComponentsNumber);
         console.log(expComponentsNumber);
         const person=fetchPersonal();
+        const educationalArray=fetchEducation();
         console.log(person);
+        console.log(educationalArray);
         const personal = new personalObject();
     }
     function fetchPersonal(){
@@ -64,6 +66,26 @@ function CvForm(){
             github:document.getElementById("github").value
 
         }
+    }
+    function fetchEducation(){
+        const returningArray=[];
+        if(educationEntries.length!=0){
+            for(let i=0;i<educationEntries.length;i++){
+                returningArray[i]={
+                    college:document.getElementById(`college${i}`).value,
+                    degree:document.getElementById(`degree${i}`).value,
+                    startDate:document.getElementById(`startDate${i}`).value,
+                    endDate:document.getElementById(`endDate${i}`).value,
+                    cgpa:document.getElementById(`cgpa${i}`).value
+
+
+                }
+            }
+
+            return returningArray;
+
+        }
+        else return [];
     }
 
 
