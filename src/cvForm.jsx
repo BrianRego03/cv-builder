@@ -63,6 +63,7 @@ function CvForm(){
         cvFormComponent.style.display="none";
         const cvGenerateComponent=document.getElementById("CVdiv");
         cvGenerateComponent.style.display="block";
+        document.querySelector("body").style.backgroundColor="grey";
 
     }
     function fetchPersonal(){

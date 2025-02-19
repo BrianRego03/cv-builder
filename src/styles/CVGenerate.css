@@ -1,0 +1,11 @@
+.CVbody{
+    width:210mm;
+    height: 297mm;
+    background-color: white;
+    padding: 15px;
+}
+#cvContainer{
+    display: flex;
+    justify-content: center;
+    
+}
