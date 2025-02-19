@@ -7,13 +7,13 @@ import './App.css'
 function App() {
   
 
+  
   return (
     <>
       <div>CV builder</div>
       <div className='container'>
         <CvForm className="cvFormCSS" />
-        <CvGenerate className="cvGenerateCSS" />
-        <div>hey</div>
+        <CvGenerate className="cvGenerateHide" />
       </div>
       
       

@@ -59,9 +59,9 @@ function CvForm(){
         console.log(educationalArray);
         console.log(experienceArray);
         const personal = new personalObject();
-        const cvFormComponent=document.querySelector(".cvFormCSS");
+        const cvFormComponent=document.getElementById("myForm");
         cvFormComponent.style.display="none";
-        const cvGenerateComponent=document.querySelector(".cvGenerateCSS");
+        const cvGenerateComponent=document.getElementById("CVdiv");
         cvGenerateComponent.style.display="block";
 
     }
