@@ -1,5 +1,10 @@
 import "../styles/CvGenerate.css"
 
+const importedArray=[];
+function cvDisplay(array){
+    importedArray=array;
+}
+
 function CvGenerate(){
     function hideCV(){
         document.getElementById("CVdiv").style.display="none";
@@ -26,3 +31,4 @@ function CvGenerate(){
 }
 
 export default CvGenerate;
+export {cvDisplay};

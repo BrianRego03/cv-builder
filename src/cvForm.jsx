@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import AddEducation from "./components/Education.jsx";
 import AddExperience from "./components/Experience.jsx";
+import { cvDisplay } from "./components/CvGenerate.jsx";
 
 function CvForm(){
     const [educationEntries, setEducationEntries]=useState([]);
@@ -55,9 +56,12 @@ function CvForm(){
         const person=fetchPersonal();
         const educationalArray=fetchEducation();
         const experienceArray=fetchExperience();
-        console.log(person);
-        console.log(educationalArray);
-        console.log(experienceArray);
+        const exportArray={person,educationalArray,experienceArray};
+        console.log(exportArray);
+        cvDisplay(exportArray);
+        // console.log(person);
+        // console.log(educationalArray);
+        // console.log(experienceArray);
         const personal = new personalObject();
         const cvFormComponent=document.getElementById("myForm");
         cvFormComponent.style.display="none";

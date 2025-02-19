@@ -9,11 +9,7 @@
 .cvFormCSS{
   min-width: 50%;
 }
-.container{
-  /* display: flex;
-  justify-content: space-evenly; */
 
-}
 #CVdiv{
   display: none;
 }
