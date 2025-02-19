@@ -15,6 +15,7 @@ function AddEducation({identifier}) {
        <>
        <div>
         <button type="button" onClick={toggleEducation}>Education</button>
+        <button type="button">X</button>
 
     </div>
     {isEducationVisible && (
