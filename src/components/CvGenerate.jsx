@@ -1,6 +1,6 @@
 import "../styles/CvGenerate.css"
 
-const importedArray=[];
+let importedArray=[];
 function cvDisplay(array){
     importedArray=array;
 }
