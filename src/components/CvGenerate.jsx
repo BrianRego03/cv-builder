@@ -1,4 +1,4 @@
-import "../styles/CvGenerate.css"
+import "../styles/CVGenerate.css"
 
 let importedArray=[];
 function cvDisplay(array){

@@ -1,7 +1,8 @@
 // import '../styles/education.css'
-import React, { useState } from 'react';
 
+import { useState } from 'react';
 
+// eslint-disable-next-line react/prop-types
 function AddExperience({identifier}) {
     const [isExperienceVisible, setIsExperienceVisible] = useState(false);
     const index=identifier;

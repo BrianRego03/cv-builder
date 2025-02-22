@@ -8,15 +8,15 @@ function CvForm(){
     const [educationEntries, setEducationEntries]=useState([]);
     const [experienceEntries, setExperienceEntries]=useState([]);
    
-    class personalObject
-    { 
-        constructor (name,email,mobile,github){
-        this.name=name;
-        this.email=email;
-        this.mobile=mobile;
-        this.github=github;
-    };
-    }
+    // class personalObject
+    // { 
+    //     constructor (name,email,mobile,github){
+    //     this.name=name;
+    //     this.email=email;
+    //     this.mobile=mobile;
+    //     this.github=github;
+    // };
+    // }
 
 
 
@@ -62,7 +62,7 @@ function CvForm(){
         // console.log(person);
         // console.log(educationalArray);
         // console.log(experienceArray);
-        const personal = new personalObject();
+        // const personal = new personalObject();
         const cvFormComponent=document.getElementById("myForm");
         cvFormComponent.style.display="none";
         const cvGenerateComponent=document.getElementById("CVdiv");
