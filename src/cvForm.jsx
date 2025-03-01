@@ -18,6 +18,16 @@ function CvForm(){
     // };
     // }
 
+    // class educationalObject
+    // { 
+    //     constructor (collegeName,degree,startDate,endDate,cgpa){
+    //     this.collegeName=collegeName;
+    //     this.degree=degree;
+    //     this.startDate=startDate;
+    //     this.endDate=endDate;
+    //     this.cgpa=cgpa;
+    // };
+    // }
 
 
 
@@ -34,7 +44,9 @@ function CvForm(){
     }
 
     function addEducationSection(){
-        setEducationEntries([...educationEntries,<AddEducation key={educationEntries.length} 
+        setEducationEntries([...educationEntries,<AddEducation person={{collegeName:"ff",degree:"ff",
+            startDate:null,endDate:null,cgpa:"9"}}
+             key={educationEntries.length} 
             identifier={educationEntries.length} />])
       
         // console.log(educationEntries.length);
