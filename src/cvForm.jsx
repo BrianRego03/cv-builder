@@ -43,13 +43,9 @@ function CvForm(){
         
     }
 
-    function addEducationSection(){
-        setEducationEntries([...educationEntries,<AddEducation person={{collegeName:"ff",degree:"ff",
-            startDate:null,endDate:null,cgpa:"9"}}
-             key={educationEntries.length} 
-            identifier={educationEntries.length} />])
+    function addEducation(newEducation){
+        setEducationEntries((prevEntries) => [...prevEntries, newEducation]);
       
-        // console.log(educationEntries.length);
     }
 
     function addExperienceSection(){
@@ -156,12 +152,15 @@ function CvForm(){
                     
 
                 </fieldset>
-                <button type ="button" onClick={addEducationSection} 
+                <button type ="button" onClick={addEducation} 
                 id="educationSection">Add an education Section + </button>
                 
-                {/* <AddEducation />
-                <AddEducation /> */}
-                <div>{educationEntries}</div>
+                <div>{educationEntries.map((item,indice)=>{return(
+                    <AddEducation key={indice} person={item} onEducationChange={addEducation}/>
+                )  
+                }            
+                )
+                }</div>
 
                 <button type ="button" onClick={addExperienceSection} 
                 id="experiencenSection">Add an experience Section + </button>

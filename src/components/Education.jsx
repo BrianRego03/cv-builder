@@ -2,11 +2,11 @@ import '../styles/education.css'
 import React, { useState } from 'react';
 
 
-function AddEducation({identifier,person}) {
+function AddEducation({key,person,onEducationChange}) {
     const [isEducationVisible, setIsEducationVisible] = useState(false);
-    console.log(identifier);
+    console.log(key);
     console.log(person);
-    const index=identifier;
+    const index=key;
     function toggleEducation() {
 
       setIsEducationVisible((prevState) => !prevState);
