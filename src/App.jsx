@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import CvForm from './cvForm.jsx'
+import CvForm from './components/cvForm.jsx'
 import CvGenerate from './components/CvGenerate.jsx'
 
 import './App.css'

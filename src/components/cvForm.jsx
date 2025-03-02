@@ -1,8 +1,7 @@
 import { useState } from "react";
 
-import AddEducation from "./components/Education.jsx";
-import AddExperience from "./components/Experience.jsx";
-import { cvDisplay } from "./components/CvGenerate.jsx";
+import AddEducation from "./Education.jsx";
+import AddExperience from "./Experience.jsx";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -58,20 +57,7 @@ function CvForm(){
 
     function handleSubmit(event){
         event.preventDefault();
-        const eduComponentsNumber=educationEntries.length;
-        const expComponentsNumber=experienceEntries.length;
-        console.log(eduComponentsNumber);
-        console.log(expComponentsNumber);
-        const person=fetchPersonal();
-        const educationalArray=fetchEducation();
-        const experienceArray=fetchExperience();
-        const exportArray={person,educationalArray,experienceArray};
-        console.log(exportArray);
-        cvDisplay(exportArray);
-        // console.log(person);
-        // console.log(educationalArray);
-        // console.log(experienceArray);
-        // const personal = new personalObject();
+        
         const cvFormComponent=document.getElementById("myForm");
         cvFormComponent.style.display="none";
         const cvGenerateComponent=document.getElementById("CVdiv");
@@ -79,57 +65,7 @@ function CvForm(){
         document.querySelector("body").style.backgroundColor="grey";
 
     }
-    function fetchPersonal(){
-        return {
-            name:document.getElementById("name").value,
-            email:document.getElementById("email").value,
-            mobile:document.getElementById("mobile").value,
-            github:document.getElementById("github").value
-
-        }
-    }
-    function fetchEducation(){
-        const returningEduArray=[];
-        if(educationEntries.length!=0){
-            for(let i=0;i<educationEntries.length;i++){
-                returningEduArray[i]={
-                    college:document.getElementById(`college${i}`).value,
-                    degree:document.getElementById(`degree${i}`).value,
-                    startDate:document.getElementById(`startDate${i}`).value,
-                    endDate:document.getElementById(`endDate${i}`).value,
-                    cgpa:document.getElementById(`cgpa${i}`).value
-
-
-                }
-            }
-
-            return returningEduArray;
-
-        }
-        else return [];
-    }
-    function fetchExperience(){
-        const returningArray=[];
-        if(experienceEntries.length!=0){
-            for(let i=0;i<experienceEntries.length;i++){
-                returningArray[i]={
-                    jobTitle:document.getElementById(`jobTitle${i}`).value,
-                    company:document.getElementById(`company${i}`).value,
-                    jobStartDate:document.getElementById(`jobStartDate${i}`).value,
-                    jobEndDate:document.getElementById(`jobEndDate${i}`).value,
-                    jobDetails:document.getElementById(`jobDetails${i}`).value,
-                    jobLocation:document.getElementById(`jobLocation${i}`).value,
-
-
-
-                }
-            }
-
-            return returningArray;
-
-        }
-        else return [];
-    }
+    
 
 
 

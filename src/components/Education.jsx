@@ -1,5 +1,5 @@
 import '../styles/education.css'
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 /* eslint-disable react/prop-types */
 
 
