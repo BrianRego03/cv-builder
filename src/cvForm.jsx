@@ -4,30 +4,13 @@ import AddEducation from "./components/Education.jsx";
 import AddExperience from "./components/Experience.jsx";
 import { cvDisplay } from "./components/CvGenerate.jsx";
 
+import { v4 as uuidv4 } from "uuid";
+
+
 function CvForm(){
     const [educationEntries, setEducationEntries]=useState([]);
     const [experienceEntries, setExperienceEntries]=useState([]);
-   
-    // class personalObject
-    // { 
-    //     constructor (name,email,mobile,github){
-    //     this.name=name;
-    //     this.email=email;
-    //     this.mobile=mobile;
-    //     this.github=github;
-    // };
-    // }
 
-    // class educationalObject
-    // { 
-    //     constructor (collegeName,degree,startDate,endDate,cgpa){
-    //     this.collegeName=collegeName;
-    //     this.degree=degree;
-    //     this.startDate=startDate;
-    //     this.endDate=endDate;
-    //     this.cgpa=cgpa;
-    // };
-    // }
 
 
 
@@ -48,16 +31,22 @@ function CvForm(){
         if (educationIndex!==undefined){
             setEducationEntries((prevEntries)=>{
                 const updatedEntries=[...prevEntries];
-                updatedEntries[educationIndex]=[newEducation];
+                updatedEntries[educationIndex]=newEducation;
                 console.log(educationEntries);
                 return updatedEntries;
 
             })
         }
         else{
-            setEducationEntries((prevEntries) => [...prevEntries, newEducation]);
+            setEducationEntries((prevEntries) => [...prevEntries, {id:uuidv4()}]);
         }
       
+    }
+
+    function removeEducationalObject(uniqueID){
+        console.log(uniqueID);
+        console.log(educationEntries);
+        setEducationEntries((prevEntries)=>prevEntries.filter(entry=>entry.id!==uniqueID))
     }
 
     function addExperienceSection(){
@@ -164,11 +153,14 @@ function CvForm(){
                     
 
                 </fieldset>
-                <button type ="button" onClick={addEducationObject} 
+                <button type ="button" onClick={()=>{addEducationObject()}} 
                 id="educationSection">Add an education Section + </button>
                 
                 <div>{educationEntries.map((item,indice)=>{return(
-                    <AddEducation key={indice} index={indice} person={item} onEducationChange={addEducationObject}/>
+                    <AddEducation key={item.id} index={indice} person={item} 
+                    id={item.id}
+                    onEducationChange={addEducationObject} 
+                    onEducationDelete={removeEducationalObject}/>
                 )  
                 }            
                 )

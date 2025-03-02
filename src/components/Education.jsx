@@ -4,16 +4,16 @@ import React, { useState, useEffect } from 'react';
 
 
 
-function AddEducation({index,person,onEducationChange}) {
+function AddEducation({index,person,onEducationChange,onEducationDelete}) {
     const [isEducationVisible, setIsEducationVisible] = useState(false);
     const [formData,setFormData]=useState({
         collegeName:"",
         degree:"",
         startDate:"",
         endDate:"",
-        cgpa:""
+        cgpa:"",
+        id:`${person.id}`,
     });
-
 
     function handleInputChange(e){
         const { name, value } = e.target;
@@ -36,7 +36,7 @@ function AddEducation({index,person,onEducationChange}) {
        <>
        <div>
         <button type="button" onClick={toggleEducation}>Education</button>
-        <button type="button">X</button>
+        <button type="button" onClick={()=>{onEducationDelete(formData.id)}}>X</button>
 
     </div>
     {isEducationVisible && (
