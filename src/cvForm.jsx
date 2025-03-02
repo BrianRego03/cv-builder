@@ -43,8 +43,20 @@ function CvForm(){
         
     }
 
-    function addEducation(newEducation){
-        setEducationEntries((prevEntries) => [...prevEntries, newEducation]);
+    function addEducationObject(newEducation,educationIndex){
+        // setEducationEntries((prevEntries) => [...prevEntries, newEducation]);
+        if (educationIndex!==undefined){
+            setEducationEntries((prevEntries)=>{
+                const updatedEntries=[...prevEntries];
+                updatedEntries[educationIndex]=[newEducation];
+                console.log(educationEntries);
+                return updatedEntries;
+
+            })
+        }
+        else{
+            setEducationEntries((prevEntries) => [...prevEntries, newEducation]);
+        }
       
     }
 
@@ -152,11 +164,11 @@ function CvForm(){
                     
 
                 </fieldset>
-                <button type ="button" onClick={addEducation} 
+                <button type ="button" onClick={addEducationObject} 
                 id="educationSection">Add an education Section + </button>
                 
                 <div>{educationEntries.map((item,indice)=>{return(
-                    <AddEducation key={indice} person={item} onEducationChange={addEducation}/>
+                    <AddEducation key={indice} index={indice} person={item} onEducationChange={addEducationObject}/>
                 )  
                 }            
                 )
