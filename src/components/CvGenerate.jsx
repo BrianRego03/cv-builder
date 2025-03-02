@@ -1,9 +1,6 @@
 import "../styles/CVGenerate.css"
 
-let importedArray=[];
-function cvDisplay(array){
-    importedArray=array;
-}
+
 
 function CvGenerate(){
     function hideCV(){
@@ -31,4 +28,3 @@ function CvGenerate(){
 }
 
 export default CvGenerate;
-export {cvDisplay};
