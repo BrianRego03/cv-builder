@@ -4,11 +4,13 @@ import AddEducation from "./Education.jsx";
 import AddExperience from "./Experience.jsx";
 
 import { v4 as uuidv4 } from "uuid";
+import AddPersonal from "./PersonalDetails.jsx";
 
 
 function CvForm(){
     const [educationEntries, setEducationEntries]=useState([]);
     const [experienceEntries, setExperienceEntries]=useState([]);
+    const [personalEntries, setPersonalEntries]=useState({});
 
 
 
@@ -23,6 +25,10 @@ function CvForm(){
             personalDetails.style.display="none"
         }
         
+    }
+
+    function addPersonalDetails(personalObject){
+        setPersonalEntries(()=>{return personalObject});
     }
 
     function addEducationObject(newEducation,educationIndex){
@@ -90,19 +96,7 @@ function CvForm(){
                 <div>
                     <button type="button" onClick={showPersonalDetails}>Personal Details</button>
                 </div>
-                <fieldset className="personalDetails" id="personalDetailsSection">
-                    <legend>Personal Information</legend>
-                    <div><label htmlFor="name">Name:</label></div>
-                    <input type="text" id="name"></input>
-                    <div><label htmlFor="email">Email:</label></div>
-                    <div><input type="email" id="email"></input></div>
-                    <div><label htmlFor="mobile">Phone number:</label></div>
-                    <div><input type="tel" id="mobile"></input></div>
-                    <div><label htmlFor="github">Github link:</label></div>
-                    <div><input type="url" id="github"></input></div>
-                    
-
-                </fieldset>
+                <AddPersonal onPersonalChange={addPersonalDetails} />
                 <button type ="button" onClick={()=>{addEducationObject()}} 
                 id="educationSection">Add an education Section + </button>
                 
