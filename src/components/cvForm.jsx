@@ -48,11 +48,25 @@ function CvForm(){
         setEducationEntries((prevEntries)=>prevEntries.filter(entry=>entry.id!==uniqueID))
     }
 
-    function addExperienceSection(){
-        setExperienceEntries([...experienceEntries,<AddExperience key={experienceEntries.length}
-            identifier={experienceEntries.length} />])
+    function addExperienceObject(newExperience,experienceIndex){
+        if (experienceIndex!==undefined){
+            setExperienceEntries((prevEntries)=>{
+                const updatedEntries=[...prevEntries];
+                updatedEntries[experienceIndex]=newExperience;
+                console.log(experienceEntries);
+                return updatedEntries;
+
+            })
+        }
+        else{
+            setExperienceEntries((prevEntries) => [...prevEntries, {id:uuidv4()}]);
+        }
       
 
+    }
+    function removeExperienceObject(uniqueID){
+        
+        setExperienceEntries((prevEntries)=>prevEntries.filter(entry=>entry.id!==uniqueID))
     }
 
     function handleSubmit(event){
@@ -102,11 +116,18 @@ function CvForm(){
                 )
                 }</div>
 
-                <button type ="button" onClick={addExperienceSection} 
-                id="experiencenSection">Add an experience Section + </button>
-                <div>{experienceEntries}</div>
+                <button type ="button" onClick={addExperienceObject} 
+                id="experienceSection">Add an experience Section + </button>
+                <div>{experienceEntries.map((item,indice)=>{return(
+                    <AddExperience key={item.id} index={indice} person={item} 
+                    id={item.id}
+                    onExperienceChange={addExperienceObject} 
+                    onExperienceDelete={removeExperienceObject}/>
+                )  
+                }            
+                )
+                }</div>
 
-                {/* <AddExperience /> */}
                 <button type="submit">Save & Submit</button>
             </form>
         </>
