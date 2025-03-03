@@ -22,7 +22,7 @@ function CvGenerate({educationData,experienceData,personalData,onEditClick}){
        <div >CV</div>
        <button type="button" onClick={onEditClick}>Edit</button>
        <div id="cvContainer">
-       <div className="CVbody">{personalData.name}</div>
+       <div className="CVbody">Name:{personalData.name}</div>
        </div>
    </div>
 

@@ -19,10 +19,11 @@ function AddEducation({index,person,onEducationChange,onEducationDelete}) {
         const { name, value } = e.target;
         setFormData((prevEntries)=>{
             const updatedEntries={...prevEntries, [name]:value}
+            onEducationChange(updatedEntries,index);
+
             return updatedEntries;
+
         });
-        console.log(formData);
-        onEducationChange(formData,index);
 
     }
    

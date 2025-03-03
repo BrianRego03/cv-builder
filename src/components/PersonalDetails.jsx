@@ -14,11 +14,10 @@ function AddPersonal({person, onPersonalChange}) {
     function handleInputChange(e){
         const { name, value } = e.target;
         setFormData((prevEntries)=>{
-            const updatedEntries={...prevEntries, [name]:value}
+            const updatedEntries={...prevEntries, [name]:value};
+            onPersonalChange(updatedEntries);
             return updatedEntries;
         });
-        console.log(formData);
-        onPersonalChange(formData);
 
     }
     

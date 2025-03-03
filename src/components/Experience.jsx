@@ -20,11 +20,10 @@ function AddExperience({index,person,onExperienceChange,onExperienceDelete}) {
     function handleInputChange(e){
         const { name, value } = e.target;
         setFormData((prevEntries)=>{
-            const updatedEntries={...prevEntries, [name]:value}
+            const updatedEntries={...prevEntries, [name]:value};
+            onExperienceChange(updatedEntries,index);
             return updatedEntries;
         });
-        console.log(formData);
-        onExperienceChange(formData,index);
 
     }
     function toggleExperience() {
