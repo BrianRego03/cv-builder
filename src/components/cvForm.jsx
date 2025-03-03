@@ -5,6 +5,8 @@ import AddExperience from "./Experience.jsx";
 
 import { v4 as uuidv4 } from "uuid";
 import AddPersonal from "./PersonalDetails.jsx";
+import CvGenerate from './CvGenerate.jsx'
+
 
 
 function CvForm(){
@@ -124,6 +126,9 @@ function CvForm(){
 
                 <button type="submit">Save & Submit</button>
             </form>
+            <CvGenerate className="cvGenerateHide" educationData={educationEntries}
+                experienceData={experienceEntries} personalData={personalEntries} />
+
         </>
     )
 }
