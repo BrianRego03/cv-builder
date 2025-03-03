@@ -2,7 +2,9 @@
 
 import { useState } from 'react';
 
-// eslint-disable-next-line react/prop-types
+/* eslint-disable react/prop-types */
+
+
 function AddExperience({index,person,onExperienceChange,onExperienceDelete}) {
     const [isExperienceVisible, setIsExperienceVisible] = useState(false);
     const [formData,setFormData]=useState({
