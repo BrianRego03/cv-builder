@@ -13,6 +13,9 @@ function CvForm(){
     const [educationEntries, setEducationEntries]=useState([]);
     const [experienceEntries, setExperienceEntries]=useState([]);
     const [personalEntries, setPersonalEntries]=useState({});
+    const [isCVVisible, setIsCVVisible] = useState(false);
+    const [isFormVisible, setIsFormVisible] = useState(true);
+
 
 
 
@@ -80,11 +83,19 @@ function CvForm(){
     function handleSubmit(event){
         event.preventDefault();
         
-        const cvFormComponent=document.getElementById("myForm");
-        cvFormComponent.style.display="none";
-        const cvGenerateComponent=document.getElementById("CVdiv");
-        cvGenerateComponent.style.display="block";
+        // const cvFormComponent=document.getElementById("myForm");
+        // cvFormComponent.style.display="none";
+        // const cvGenerateComponent=document.getElementById("CVdiv");
+        // cvGenerateComponent.style.display="block";
+        setIsCVVisible((prevState)=> !prevState);
+        setIsFormVisible((prevState)=> !prevState);
         document.querySelector("body").style.backgroundColor="grey";
+
+    }
+    function returnToForm(){
+        setIsCVVisible((prevState)=> !prevState);
+        setIsFormVisible((prevState)=> !prevState);
+        document.querySelector("body").style.backgroundColor="white";
 
     }
     
@@ -94,11 +105,11 @@ function CvForm(){
 
     return(
         <>
-            <form id="myForm" onSubmit={handleSubmit}>
+            {isFormVisible && (<form id="myForm" onSubmit={handleSubmit}>
                 <div>
                     <button type="button" onClick={showPersonalDetails}>Personal Details</button>
                 </div>
-                <AddPersonal onPersonalChange={addPersonalDetails} />
+                <AddPersonal person={personalEntries} onPersonalChange={addPersonalDetails} />
                 <button type ="button" onClick={()=>{addEducationObject()}} 
                 id="educationSection">Add an education Section + </button>
                 
@@ -125,9 +136,13 @@ function CvForm(){
                 }</div>
 
                 <button type="submit">Save & Submit</button>
-            </form>
-            <CvGenerate className="cvGenerateHide" educationData={educationEntries}
-                experienceData={experienceEntries} personalData={personalEntries} />
+            </form>)}
+
+            {isCVVisible && 
+            (<CvGenerate className="cvGenerateHide" educationData={educationEntries}
+                experienceData={experienceEntries} personalData={personalEntries} 
+                onEditClick={returnToForm}/>)
+                }
 
         </>
     )

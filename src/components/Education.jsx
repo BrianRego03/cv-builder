@@ -7,11 +7,11 @@ import { useState } from 'react';
 function AddEducation({index,person,onEducationChange,onEducationDelete}) {
     const [isEducationVisible, setIsEducationVisible] = useState(false);
     const [formData,setFormData]=useState({
-        collegeName:"",
-        degree:"",
-        startDate:"",
-        endDate:"",
-        cgpa:"",
+        collegeName: person.collegeName || "",
+        degree: person.degree || "",
+        startDate: person.startDate || "",
+        endDate:person.endDate || "",
+        cgpa: person.cgpa || "",
         id:`${person.id}`,
     });
 

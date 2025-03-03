@@ -8,12 +8,12 @@ import { useState } from 'react';
 function AddExperience({index,person,onExperienceChange,onExperienceDelete}) {
     const [isExperienceVisible, setIsExperienceVisible] = useState(false);
     const [formData,setFormData]=useState({
-        jobTitle:"",
-        company:"",
-        jobStartDate:"",
-        jobEndDate:"",
-        jobDetails:"",
-        jobLocation:"",
+        jobTitle: person.jobTitle || "",
+        company: person.company || "",
+        jobStartDate: person.jobStartDate || "",
+        jobEndDate: person.jobEndDate || "",
+        jobDetails: person.jobDetails || "",
+        jobLocation: person.jobLocation || "",
         id:`${person.id}`,
     });
 

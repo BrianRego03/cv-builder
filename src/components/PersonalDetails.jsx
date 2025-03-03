@@ -3,12 +3,12 @@ import { useState } from 'react';
 /* eslint-disable react/prop-types */
 
 
-function AddPersonal({onPersonalChange}) {
+function AddPersonal({person, onPersonalChange}) {
     const [formData,setFormData]=useState({
-        name:"",
-        email:"",
-        mobile:"",
-        github:"",
+        name: person.name || "",
+        email: person.email || "",
+        mobile: person.mobile || "",
+        github: person.github || "",
     });
 
     function handleInputChange(e){

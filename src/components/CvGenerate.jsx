@@ -1,23 +1,28 @@
 import "../styles/CVGenerate.css"
 
+/* eslint-disable react/prop-types */
 
 
-function CvGenerate(){
+
+
+function CvGenerate({educationData,experienceData,personalData,onEditClick}){
     function hideCV(){
-        document.getElementById("CVdiv").style.display="none";
-        document.getElementById("myForm").style.display="block";
+        // onEditClick();
         document.querySelector("body").style.backgroundColor="white";
 
 
 
     }
 
+    console.log(personalData);
+    console.log(onEditClick);
+
    return(
    <div id="CVdiv">
        <div >CV</div>
-       <button type="button" onClick={hideCV}>Edit</button>
+       <button type="button" onClick={onEditClick}>Edit</button>
        <div id="cvContainer">
-       <div className="CVbody">name</div>
+       <div className="CVbody">{personalData.name}</div>
        </div>
    </div>
 
