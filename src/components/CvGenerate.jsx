@@ -2,7 +2,8 @@ import "../styles/CVGenerate.css"
 
 /* eslint-disable react/prop-types */
 
-import EducationComponent from "./EducationCV";
+import EducationComponent from "./EducationCV.jsx";
+import ExperienceComponent from "./ExperienceCV.jsx";
 
 
 
