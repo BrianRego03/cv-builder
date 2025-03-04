@@ -42,6 +42,12 @@ function CvGenerate({educationData,experienceData,personalData,onEditClick}){
                 })}
                 
             </div>
+            <div className="sectionTitle">Experience</div>
+            <div>
+                {experienceData.map((item,index)=>{
+                    return <ExperienceComponent key={item.id} index={index} person={item}/>
+                })}
+            </div>
 
        </div>
        </div>
