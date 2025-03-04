@@ -2,6 +2,8 @@ import "../styles/CVGenerate.css"
 
 /* eslint-disable react/prop-types */
 
+import EducationComponent from "./EducationCV";
+
 
 
 
@@ -32,6 +34,15 @@ function CvGenerate({educationData,experienceData,personalData,onEditClick}){
                 <div>|</div>
                 <div><a href={personalData.github}> Github</a></div>
             </div>
+            <div className="sectionTitle">Education</div>
+            <div>
+                {educationData.map((item,index)=>{
+                    return <EducationComponent key={item.id} index={index} person={item} />
+
+                })}
+                
+            </div>
+
        </div>
        </div>
    </div>

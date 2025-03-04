@@ -7,6 +7,10 @@
     flex-direction: column;
     align-items: center;
 }
+#cvTitle{
+    font-size: 28px;
+    font-weight: 600;
+}
 #cvContainer{
     display: flex;
     justify-content: center;
@@ -19,4 +23,10 @@
     width:50%;
     font-size: 16px;
     
+}
+
+.sectionTitle{
+    border-bottom: 1px solid #CCCCCC;
+    min-width: 100%;
+    text-align: left;
 }
