@@ -1,6 +1,6 @@
 // import '../styles/education.css'
 
-import { useState } from 'react';
+import { useEffect,useState } from 'react';
 
 /* eslint-disable react/prop-types */
 
@@ -21,11 +21,16 @@ function AddExperience({index,person,onExperienceChange,onExperienceDelete}) {
         const { name, value } = e.target;
         setFormData((prevEntries)=>{
             const updatedEntries={...prevEntries, [name]:value};
-            onExperienceChange(updatedEntries,index);
+        //     onExperienceChange(updatedEntries,index);
             return updatedEntries;
         });
 
     }
+
+        useEffect(()=>{
+                onExperienceChange(formData,index);
+        },[formData,index,onExperienceChange]);
+
     function toggleExperience() {
 
         setIsExperienceVisible((prevState) => !prevState);

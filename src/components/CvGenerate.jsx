@@ -22,7 +22,17 @@ function CvGenerate({educationData,experienceData,personalData,onEditClick}){
        <div >CV</div>
        <button type="button" onClick={onEditClick}>Edit</button>
        <div id="cvContainer">
-       <div className="CVbody">Name:{personalData.name}</div>
+       <div className="CVbody">
+
+            <div id="cvTitle">{personalData.name}</div>
+            <div id="cvSubTitle">
+                <div>{personalData.mobile}</div>
+                <div>|</div>
+                <div><a href={"mailto:"+`${personalData.email}`}>{personalData.email}</a></div>
+                <div>|</div>
+                <div><a href={personalData.github}> Github</a></div>
+            </div>
+       </div>
        </div>
    </div>
 

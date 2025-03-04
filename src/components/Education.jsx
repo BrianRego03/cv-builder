@@ -1,5 +1,5 @@
 import '../styles/education.css'
-import { useState } from 'react';
+import { useEffect,useState } from 'react';
 /* eslint-disable react/prop-types */
 
 
@@ -26,6 +26,9 @@ function AddEducation({index,person,onEducationChange,onEducationDelete}) {
         });
 
     }
+    useEffect(()=>{
+        onEducationChange(formData,index);
+    },[formData,index,onEducationChange]);
    
 
     function toggleEducation() {
