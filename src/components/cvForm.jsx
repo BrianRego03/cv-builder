@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback} from "react";
 
 import AddEducation from "./Education.jsx";
 import AddExperience from "./Experience.jsx";
@@ -32,17 +32,15 @@ function CvForm(){
         
     }
 
-    function addPersonalDetails(personalObject){
+    const addPersonalDetails= useCallback((personalObject)=>{
         setPersonalEntries(()=>{return personalObject});
-    }
+    },[]);
 
-    function addEducationObject(newEducation,educationIndex){
-        // setEducationEntries((prevEntries) => [...prevEntries, newEducation]);
+    const addEducationObject= useCallback((newEducation,educationIndex) => {
         if (educationIndex!==undefined){
             setEducationEntries((prevEntries)=>{
                 const updatedEntries=[...prevEntries];
                 updatedEntries[educationIndex]=newEducation;
-                console.log(educationEntries);
                 return updatedEntries;
 
             })
@@ -51,7 +49,7 @@ function CvForm(){
             setEducationEntries((prevEntries) => [...prevEntries, {id:uuidv4()}]);
         }
       
-    }
+    }, []);
 
     function removeEducationalObject(uniqueID){
         console.log(uniqueID);
@@ -59,22 +57,20 @@ function CvForm(){
         setEducationEntries((prevEntries)=>prevEntries.filter(entry=>entry.id!==uniqueID))
     }
 
-    function addExperienceObject(newExperience,experienceIndex){
-        if (experienceIndex!==undefined){
-            setExperienceEntries((prevEntries)=>{
-                const updatedEntries=[...prevEntries];
-                updatedEntries[experienceIndex]=newExperience;
-                console.log(experienceEntries);
+
+
+    const addExperienceObject = useCallback((newExperience, experienceIndex) => {
+        setExperienceEntries((prevEntries) => {
+            if (experienceIndex !== undefined) {
+                const updatedEntries = [...prevEntries];
+                updatedEntries[experienceIndex] = newExperience;
                 return updatedEntries;
+            } else {
+                return [...prevEntries, { id: uuidv4() }];
+            }
+        });
+    }, []);
 
-            })
-        }
-        else{
-            setExperienceEntries((prevEntries) => [...prevEntries, {id:uuidv4()}]);
-        }
-      
-
-    }
     function removeExperienceObject(uniqueID){
         
         setExperienceEntries((prevEntries)=>prevEntries.filter(entry=>entry.id!==uniqueID))

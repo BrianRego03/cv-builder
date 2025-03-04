@@ -1,5 +1,5 @@
 import '../styles/education.css'
-import { useEffect,useState } from 'react';
+import { useState,useEffect } from 'react';
 /* eslint-disable react/prop-types */
 
 
@@ -19,17 +19,16 @@ function AddEducation({index,person,onEducationChange,onEducationDelete}) {
         const { name, value } = e.target;
         setFormData((prevEntries)=>{
             const updatedEntries={...prevEntries, [name]:value}
-            onEducationChange(updatedEntries,index);
+            // onEducationChange(updatedEntries,index);
 
             return updatedEntries;
 
         });
 
     }
-    useEffect(()=>{
-        onEducationChange(formData,index);
-    },[formData,index,onEducationChange]);
-   
+     useEffect(()=>{
+           onEducationChange(formData,index)
+       },[formData,index,onEducationChange]);
 
     function toggleEducation() {
 

@@ -10,6 +10,8 @@ function AddPersonal({person, onPersonalChange}) {
         mobile: person.mobile || "",
         github: person.github || "",
     });
+
+
     useEffect(()=>{
         onPersonalChange(formData);
     },[formData,onPersonalChange]);
@@ -18,7 +20,6 @@ function AddPersonal({person, onPersonalChange}) {
         const { name, value } = e.target;
         setFormData((prevEntries)=>{
             const updatedEntries={...prevEntries, [name]:value};
-            // onPersonalChange(updatedEntries);
             return updatedEntries;
         });
 
