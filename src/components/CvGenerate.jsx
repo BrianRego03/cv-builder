@@ -16,7 +16,7 @@ function CvGenerate({educationData,experienceData,personalData,onEditClick}){
 
     }
 
-    console.log(personalData);
+    console.log(educationData);
     console.log(onEditClick);
 
    return(
