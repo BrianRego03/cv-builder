@@ -12,7 +12,9 @@ function AddExperience({index,person,onExperienceChange,onExperienceDelete}) {
         company: person.company || "",
         jobStartDate: person.jobStartDate || "",
         jobEndDate: person.jobEndDate || "",
-        jobDetails: person.jobDetails || "",
+        jobDetails0: person.jobDetails0 || "",
+        jobDetails1: person.jobDetails1 || "",
+        jobDetails2: person.jobDetails2 || "",
         jobLocation: person.jobLocation || "",
         id:`${person.id}`,
     });
@@ -56,9 +58,15 @@ function AddExperience({index,person,onExperienceChange,onExperienceDelete}) {
     <div><label htmlFor={`jobEndDate${index}`}>End Date:</label></div>
     <div><input type="month" id={`jobEndDate${index}`} value={formData.jobEndDate}
             onChange={handleInputChange} name="jobEndDate"></input></div>
-    <div><label htmlFor={`jobDetails${index}`}>Job Details:</label></div>
-    <div><input type="text" id={`jobDetails${index}`} value={formData.jobDetails}
-            onChange={handleInputChange} name="jobDetails"></input></div>
+    <div><label htmlFor={`jobDetails0${index}`}>Job Details:</label></div>
+    <div><input type="text" id={`jobDetails0${index}`} value={formData.jobDetails0}
+            onChange={handleInputChange} name="jobDetails0"></input></div>
+    <div><label htmlFor={`jobDetails1${index}`}></label></div>
+    <div><input type="text" id={`jobDetails1${index}`} value={formData.jobDetails1}
+            onChange={handleInputChange} name="jobDetails1"></input></div>
+    <div><label htmlFor={`jobDetails2${index}`}></label></div>
+    <div><input type="text" id={`jobDetails2${index}`} value={formData.jobDetails2}
+            onChange={handleInputChange} name="jobDetails2"></input></div>            
     <div><label htmlFor={`jobLocation${index}`} >Job Location:</label></div>
     <div><input type="text" id={`jobLocation${index}`} value={formData.jobLocation}
             onChange={handleInputChange} name="jobLocation"></input></div>

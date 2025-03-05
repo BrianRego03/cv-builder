@@ -29,7 +29,10 @@ return <>
             </div>
             <div>
                 <ul className="descriptionList">
-                {person.jobDetails && person.jobDetails !== "" && (<li>{person.jobDetails}</li>)}
+                {person.jobDetails0 && person.jobDetails0 !== "" && (<li>{person.jobDetails0}</li>)}
+                {person.jobDetails1 && person.jobDetails1 !== "" && (<li>{person.jobDetails1}</li>)}
+                {person.jobDetails2 && person.jobDetails2 !== "" && (<li>{person.jobDetails2}</li>)}
+
 
                 </ul>
             </div>
