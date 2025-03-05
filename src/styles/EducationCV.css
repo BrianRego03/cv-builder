@@ -2,12 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-content: space-between;
-    min-width: 160mm;
+    width: 190mm;
 
 }
 
 .educationDiv{
     margin-bottom: 20px;
+    min-width: 180mm;
 }
 
 .collegeTitle{

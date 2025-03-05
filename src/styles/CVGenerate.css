@@ -2,7 +2,7 @@
     width:210mm;
     height: 297mm;
     background-color: white;
-    padding: 15px;
+    padding: 10mm;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,6 +27,7 @@
 
 .sectionTitle{
     border-bottom: 1px solid #CCCCCC;
-    min-width: 100%;
+    width: 190mm;
     text-align: left;
+    font-size: 20px;
 }
