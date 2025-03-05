@@ -13,6 +13,7 @@ function CvForm(){
     const [educationEntries, setEducationEntries]=useState([]);
     const [experienceEntries, setExperienceEntries]=useState([]);
     const [personalEntries, setPersonalEntries]=useState({});
+    const [projectEntries, setProjectEntries]=useState({});
     const [isCVVisible, setIsCVVisible] = useState(false);
     const [isFormVisible, setIsFormVisible] = useState(true);
 
