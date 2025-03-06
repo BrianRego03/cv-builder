@@ -2,6 +2,7 @@ import { useState, useCallback} from "react";
 
 import AddEducation from "./Education.jsx";
 import AddExperience from "./Experience.jsx";
+import AddProject from "./Projects.jsx";
 
 import { v4 as uuidv4 } from "uuid";
 import AddPersonal from "./PersonalDetails.jsx";
@@ -13,7 +14,7 @@ function CvForm(){
     const [educationEntries, setEducationEntries]=useState([]);
     const [experienceEntries, setExperienceEntries]=useState([]);
     const [personalEntries, setPersonalEntries]=useState({});
-    const [projectEntries, setProjectEntries]=useState({});
+    const [projectEntries, setProjectEntries]=useState([]);
     const [isCVVisible, setIsCVVisible] = useState(false);
     const [isFormVisible, setIsFormVisible] = useState(true);
 
@@ -77,6 +78,23 @@ function CvForm(){
         setExperienceEntries((prevEntries)=>prevEntries.filter(entry=>entry.id!==uniqueID))
     }
 
+    const addProjectObject = useCallback((newProject, projectIndex) => {
+        setProjectEntries((prevEntries) => {
+            if (projectIndex !== undefined) {
+                const updatedEntries = [...prevEntries];
+                updatedEntries[projectIndex] = newProject;
+                return updatedEntries;
+            } else {
+                return [...prevEntries, { id: uuidv4() }];
+            }
+        });
+    }, []);
+
+    function removeProjectObject(uniqueID){
+        
+        setProjectEntries((prevEntries)=>prevEntries.filter(entry=>entry.id!==uniqueID))
+    }
+
     function handleSubmit(event){
         event.preventDefault();
         
@@ -127,6 +145,18 @@ function CvForm(){
                     id={item.id}
                     onExperienceChange={addExperienceObject} 
                     onExperienceDelete={removeExperienceObject}/>
+                )  
+                }            
+                )
+                }</div>
+
+                <button type ="button" onClick={addProjectObject} 
+                id="projectSection">Add a Project Section + </button>
+                <div>{projectEntries.map((item,indice)=>{return(
+                    <AddProject key={item.id} index={indice} person={item} 
+                    id={item.id}
+                    onProjectChange={addProjectObject} 
+                    onProjectDelete={removeProjectObject}/>
                 )  
                 }            
                 )

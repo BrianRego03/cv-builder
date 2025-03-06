@@ -58,7 +58,7 @@ function AddProject({index,person,onProjectChange,onProjectDelete}) {
     <div><label htmlFor={`projectEndDate${index}`}>End Date:</label></div>
     <div><input type="month" id={`projectEndDate${index}`} value={formData.projectEndDate}
             onChange={handleInputChange} name="projectEndDate"></input></div>
-    <div><label htmlFor={`projectDetails0${index}`}>Job Details:</label></div>
+    <div><label htmlFor={`projectDetails0${index}`}>Project Details:</label></div>
     <div><input type="text" id={`projectDetails0${index}`} value={formData.projectDetails0}
             onChange={handleInputChange} name="projectDetails0"></input></div>
     <div><label htmlFor={`projectDetails1${index}`}></label></div>
@@ -70,12 +70,10 @@ function AddProject({index,person,onProjectChange,onProjectDelete}) {
     <div><label htmlFor={`projectDetails3${index}`}></label></div>
     <div><input type="text" id={`projectDetails3${index}`} value={formData.projectDetails3}
             onChange={handleInputChange} name="projectDetails3"></input></div>                           
-    <div><label htmlFor={`jobLocation${index}`} >Job Location:</label></div>
-    <div><input type="text" id={`jobLocation${index}`} value={formData.jobLocation}
-            onChange={handleInputChange} name="jobLocation"></input></div>
+    
 
     </fieldset>)}</> 
     )
 }
 
-export default AddExperience;
+export default AddProject;
