@@ -167,7 +167,8 @@ function CvForm(){
 
             {isCVVisible && 
             (<CvGenerate className="cvGenerateHide" educationData={educationEntries}
-                experienceData={experienceEntries} personalData={personalEntries} 
+                experienceData={experienceEntries} projectData={projectEntries}
+                 personalData={personalEntries} 
                 onEditClick={returnToForm}/>)
                 }
 

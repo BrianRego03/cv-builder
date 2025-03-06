@@ -4,18 +4,19 @@ import "../styles/CVGenerate.css"
 
 import EducationComponent from "./EducationCV.jsx";
 import ExperienceComponent from "./ExperienceCV.jsx";
+import ProjectComponent from "./ProjectsCV.jsx";
 
 
 
 
-function CvGenerate({educationData,experienceData,personalData,onEditClick}){
-    function hideCV(){
-        // onEditClick();
-        document.querySelector("body").style.backgroundColor="white";
+function CvGenerate({educationData,experienceData,projectData,personalData,onEditClick}){
+    // function hideCV(){
+    //     // onEditClick();
+    //     document.querySelector("body").style.backgroundColor="white";
 
 
 
-    }
+    // }
 
     console.log(educationData);
     console.log(onEditClick);
@@ -49,6 +50,15 @@ function CvGenerate({educationData,experienceData,personalData,onEditClick}){
                     return <ExperienceComponent key={item.id} index={index} person={item}/>
                 })}
             </div>
+            <div className="sectionTitle">Projects</div>
+            <div>
+                {projectData.map((item,index)=>{
+                    return <ProjectComponent key={item.id} index={index} person={item}/>
+                })}
+            </div>
+
+
+
 
        </div>
        </div>
