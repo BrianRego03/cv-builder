@@ -1,0 +1,62 @@
+body{
+    background-color: rgb(240, 237, 237);
+
+}
+
+#sectionContainer{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#educationPortion{
+    background-color: rgb(212, 185, 238);
+    margin-bottom: 30px;
+
+}
+
+#experiencePortion{
+    background-color: rgb(243, 161, 161);
+    margin-bottom: 30px;
+
+
+}
+
+#projectPortion{
+    background-color: rgb(212, 241, 168);
+    margin-bottom: 30px;
+
+
+}
+
+.formSection{
+    min-width: 300px;
+    min-height: 200px;
+}
+
+.componentButton{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-top: 5px;
+    margin-bottom:5px;
+
+}
+
+.componentButton:hover{
+    background-color: blue;
+    color: azure;
+
+}
+
+.componentDeleteButton{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    width:5px;
+    
+
+}
+
+.componentDeleteButton:hover{
+    background-color: red;
+    color: azure;
+}

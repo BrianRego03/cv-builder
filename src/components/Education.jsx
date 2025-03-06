@@ -1,4 +1,5 @@
 import '../styles/education.css'
+import "../styles/cvForm.css"
 import { useState,useEffect } from 'react';
 /* eslint-disable react/prop-types */
 
@@ -38,8 +39,8 @@ function AddEducation({index,person,onEducationChange,onEducationDelete}) {
     return(
        <>
        <div>
-        <button type="button" onClick={toggleEducation}>Education</button>
-        <button type="button" onClick={()=>{onEducationDelete(formData.id)}}>X</button>
+        <button className="componentButton" type="button" onClick={toggleEducation}>{`College ${index+1}`}</button>
+        <button className="componentDeleteButton" type="button" onClick={()=>{onEducationDelete(formData.id)}}>X</button>
 
     </div>
     {isEducationVisible && (

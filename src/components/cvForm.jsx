@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 import AddPersonal from "./PersonalDetails.jsx";
 import CvGenerate from './CvGenerate.jsx'
 
+import "../styles/cvForm.css"
 
 
 function CvForm(){
@@ -122,45 +123,55 @@ function CvForm(){
         <>
             {isFormVisible && (<form id="myForm" onSubmit={handleSubmit}>
                 <div>
-                    <button type="button" onClick={showPersonalDetails}>Personal Details</button>
+                    <div>
+                        <button type="button" onClick={showPersonalDetails}>Personal Details</button>
+                    </div>
+                    <AddPersonal person={personalEntries} onPersonalChange={addPersonalDetails} />
                 </div>
-                <AddPersonal person={personalEntries} onPersonalChange={addPersonalDetails} />
-                <button type ="button" onClick={()=>{addEducationObject()}} 
-                id="educationSection">Add an education Section + </button>
-                
-                <div>{educationEntries.map((item,indice)=>{return(
-                    <AddEducation key={item.id} index={indice} person={item} 
-                    id={item.id}
-                    onEducationChange={addEducationObject} 
-                    onEducationDelete={removeEducationalObject}/>
-                )  
-                }            
-                )
-                }</div>
+                <div id="sectionContainer">
+                <div id="educationPortion" className="formSection">
+                    <button type ="button" onClick={()=>{addEducationObject()}} 
+                    id="educationSection">Add an education Section + </button>
+                    
+                    <div>{educationEntries.map((item,indice)=>{return(
+                        <AddEducation key={item.id} index={indice} person={item} 
+                        id={item.id}
+                        onEducationChange={addEducationObject} 
+                        onEducationDelete={removeEducationalObject}/>
+                    )  
+                    }            
+                    )
+                    }</div>
+                </div>
+                <div id="experiencePortion" className="formSection">
 
-                <button type ="button" onClick={addExperienceObject} 
-                id="experienceSection">Add an experience Section + </button>
-                <div>{experienceEntries.map((item,indice)=>{return(
-                    <AddExperience key={item.id} index={indice} person={item} 
-                    id={item.id}
-                    onExperienceChange={addExperienceObject} 
-                    onExperienceDelete={removeExperienceObject}/>
-                )  
-                }            
-                )
-                }</div>
+                    <button type ="button" onClick={addExperienceObject} 
+                    id="experienceSection">Add an experience Section + </button>
+                    <div>{experienceEntries.map((item,indice)=>{return(
+                        <AddExperience key={item.id} index={indice} person={item} 
+                        id={item.id}
+                        onExperienceChange={addExperienceObject} 
+                        onExperienceDelete={removeExperienceObject}/>
+                    )  
+                    }            
+                    )
+                    }</div>
 
-                <button type ="button" onClick={addProjectObject} 
-                id="projectSection">Add a Project Section + </button>
-                <div>{projectEntries.map((item,indice)=>{return(
-                    <AddProject key={item.id} index={indice} person={item} 
-                    id={item.id}
-                    onProjectChange={addProjectObject} 
-                    onProjectDelete={removeProjectObject}/>
-                )  
-                }            
-                )
-                }</div>
+                </div>    
+                <div id="projectPortion" className="formSection">    
+                    <button type ="button" onClick={addProjectObject} 
+                    id="projectSection">Add a Project Section + </button>
+                    <div>{projectEntries.map((item,indice)=>{return(
+                        <AddProject key={item.id} index={indice} person={item} 
+                        id={item.id}
+                        onProjectChange={addProjectObject} 
+                        onProjectDelete={removeProjectObject}/>
+                    )  
+                    }            
+                    )
+                    }</div>
+                </div>
+                </div>    
 
                 <button type="submit">Save & Submit</button>
             </form>)}

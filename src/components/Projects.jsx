@@ -39,8 +39,8 @@ function AddProject({index,person,onProjectChange,onProjectDelete}) {
     return(
        <>
        <div>
-        <button type="button" onClick={toggleProject}>Project</button>
-        <button type="button" onClick={()=>{onProjectDelete(formData.id)}}>X</button>
+        <button className="componentButton" type="button" onClick={toggleProject}>Project</button>
+        <button className="componentDeleteButton" type="button" onClick={()=>{onProjectDelete(formData.id)}}>X</button>
 
     </div>
     {isProjectVisible && (

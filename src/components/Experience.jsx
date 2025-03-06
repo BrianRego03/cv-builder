@@ -1,4 +1,5 @@
-// import '../styles/education.css'
+import '../styles/education.css'
+import "../styles/cvForm.css"
 
 import { useEffect, useState } from 'react';
 
@@ -39,8 +40,8 @@ function AddExperience({index,person,onExperienceChange,onExperienceDelete}) {
     return(
        <>
        <div>
-        <button type="button" onClick={toggleExperience}>Experience</button>
-        <button type="button" onClick={()=>{onExperienceDelete(formData.id)}}>X</button>
+        <button className="componentButton" type="button" onClick={toggleExperience}>{`Job ${index}`}</button>
+        <button className="componentDeleteButton" type="button" onClick={()=>{onExperienceDelete(formData.id)}}>X</button>
 
     </div>
     {isExperienceVisible && (
