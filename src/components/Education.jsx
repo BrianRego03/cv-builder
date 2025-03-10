@@ -1,6 +1,6 @@
 import '../styles/education.css'
 import "../styles/cvForm.css"
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 /* eslint-disable react/prop-types */
 
 
@@ -19,18 +19,13 @@ function AddEducation({index,person,onEducationChange,onEducationDelete}) {
     function handleInputChange(e){
         const { name, value } = e.target;
         setFormData((prevEntries)=>{
-            const updatedEntries={...prevEntries, [name]:value}
-            // onEducationChange(updatedEntries,index);
-
+            const updatedEntries={...prevEntries, [name]:value};
             return updatedEntries;
 
         });
-
+        onEducationChange({...formData,[name]:value},index);      
     }
-     useEffect(()=>{
-           onEducationChange(formData,index)
-       },[formData,index,onEducationChange]);
-
+   
     function toggleEducation() {
 
       setIsEducationVisible((prevState) => !prevState);

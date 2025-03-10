@@ -39,7 +39,7 @@ function CvForm(){
         setPersonalEntries(()=>{return personalObject});
     },[]);
 
-    const addEducationObject= useCallback((newEducation,educationIndex) => {
+    const addEducationObject= (newEducation,educationIndex) => {
         if (educationIndex!==undefined){
             setEducationEntries((prevEntries)=>{
                 const updatedEntries=[...prevEntries];
@@ -52,7 +52,7 @@ function CvForm(){
             setEducationEntries((prevEntries) => [...prevEntries, {id:uuidv4()}]);
         }
       
-    }, []);
+    };
 
     function removeEducationalObject(uniqueID){
         console.log(uniqueID);
