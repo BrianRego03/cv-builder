@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 /* eslint-disable react/prop-types */
 
@@ -12,16 +12,13 @@ function AddPersonal({person, onPersonalChange}) {
     });
 
 
-    useEffect(()=>{
-        onPersonalChange(formData);
-    },[formData,onPersonalChange]);
-
     function handleInputChange(e){
         const { name, value } = e.target;
         setFormData((prevEntries)=>{
             const updatedEntries={...prevEntries, [name]:value};
             return updatedEntries;
         });
+        onPersonalChange({...formData,[name]:value}) 
 
     }
     

@@ -35,9 +35,9 @@ function CvForm(){
         
     }
 
-    const addPersonalDetails= useCallback((personalObject)=>{
+    const addPersonalDetails= (personalObject)=>{
         setPersonalEntries(()=>{return personalObject});
-    },[]);
+    };
 
     const addEducationObject= (newEducation,educationIndex) => {
         if (educationIndex!==undefined){
