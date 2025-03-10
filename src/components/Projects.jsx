@@ -1,6 +1,6 @@
 // import '../styles/education.css'
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 /* eslint-disable react/prop-types */
 
@@ -25,12 +25,10 @@ function AddProject({index,person,onProjectChange,onProjectDelete}) {
             const updatedEntries={...prevEntries, [name]:value};
             return updatedEntries;
         });
+        onProjectChange({...formData,[name]:value});
 
     }
-    useEffect(()=>{
-        onProjectChange(formData,index)
-    },[formData,index,onProjectChange]);
-
+    
     function toggleProject() {
 
         setIsProjectVisible((prevState) => !prevState);

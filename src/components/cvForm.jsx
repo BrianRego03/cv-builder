@@ -62,7 +62,7 @@ function CvForm(){
 
 
 
-    const addExperienceObject = useCallback((newExperience, experienceIndex) => {
+    const addExperienceObject =(newExperience, experienceIndex) => {
         setExperienceEntries((prevEntries) => {
             if (experienceIndex !== undefined) {
                 const updatedEntries = [...prevEntries];
@@ -72,14 +72,14 @@ function CvForm(){
                 return [...prevEntries, { id: uuidv4() }];
             }
         });
-    }, []);
+    };
 
     function removeExperienceObject(uniqueID){
         
         setExperienceEntries((prevEntries)=>prevEntries.filter(entry=>entry.id!==uniqueID))
     }
 
-    const addProjectObject = useCallback((newProject, projectIndex) => {
+    const addProjectObject = (newProject, projectIndex) => {
         setProjectEntries((prevEntries) => {
             if (projectIndex !== undefined) {
                 const updatedEntries = [...prevEntries];
@@ -89,7 +89,7 @@ function CvForm(){
                 return [...prevEntries, { id: uuidv4() }];
             }
         });
-    }, []);
+    };
 
     function removeProjectObject(uniqueID){
         
@@ -98,11 +98,6 @@ function CvForm(){
 
     function handleSubmit(event){
         event.preventDefault();
-        
-        // const cvFormComponent=document.getElementById("myForm");
-        // cvFormComponent.style.display="none";
-        // const cvGenerateComponent=document.getElementById("CVdiv");
-        // cvGenerateComponent.style.display="block";
         setIsCVVisible((prevState)=> !prevState);
         setIsFormVisible((prevState)=> !prevState);
         document.querySelector("body").style.backgroundColor="grey";

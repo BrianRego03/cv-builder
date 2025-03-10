@@ -1,7 +1,7 @@
 import '../styles/education.css'
 import "../styles/cvForm.css"
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 /* eslint-disable react/prop-types */
 
@@ -26,12 +26,10 @@ function AddExperience({index,person,onExperienceChange,onExperienceDelete}) {
             const updatedEntries={...prevEntries, [name]:value};
             return updatedEntries;
         });
+        onExperienceChange({...formData,[name]:value},index);
 
     }
-    useEffect(()=>{
-        onExperienceChange(formData,index)
-    },[formData,index,onExperienceChange]);
-
+    
     function toggleExperience() {
 
         setIsExperienceVisible((prevState) => !prevState);
