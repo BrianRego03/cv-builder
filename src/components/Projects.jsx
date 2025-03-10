@@ -37,7 +37,7 @@ function AddProject({index,person,onProjectChange,onProjectDelete}) {
     return(
        <>
        <div>
-        <button className="componentButton" type="button" onClick={toggleProject}>Project</button>
+        <button className="componentButton" type="button" onClick={toggleProject}>{`Project ${index+1}`}</button>
         <button className="componentDeleteButton" type="button" onClick={()=>{onProjectDelete(formData.id)}}>X</button>
 
     </div>

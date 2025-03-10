@@ -38,7 +38,7 @@ function AddExperience({index,person,onExperienceChange,onExperienceDelete}) {
     return(
        <>
        <div>
-        <button className="componentButton" type="button" onClick={toggleExperience}>{`Job ${index}`}</button>
+        <button className="componentButton" type="button" onClick={toggleExperience}>{`Job ${index+1}`}</button>
         <button className="componentDeleteButton" type="button" onClick={()=>{onExperienceDelete(formData.id)}}>X</button>
 
     </div>
